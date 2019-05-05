@@ -63,7 +63,7 @@ class AddQuestionsAnswersController extends BaseController
         }
         else
         {
-            $message = 'Failed to add data';
+            $message = 'Failed to save data.';
             return redirect('add_questions_answers')->with('error',$message);
         }
     }
