@@ -56,26 +56,9 @@
                         <form class="formmain" action="{{url('/save_question_answer')}}" method="post" name="manage_que_ans" id="manage_que_ans" accept-charset="UTF-8" enctype="multipart/form-data">
                             @csrf
                             <div id="addQuestionForm"></div>
-
-                            <!--<div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" id="questionTitle_0">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputState">State</label>
-                                    <select id="questionType" class="form-control" onchange="selectedType(this)">
-                                        <option selected>Choose...</option>
-                                        <option value="multi-line">Multi-line text</option>
-                                        <option value="single-choice">Single Choice</option>
-                                        <option value="multi-choice">Multiple Choice</option>
-                                    </select>
-                                </div>
-                            </div>-->
                             <div class="form-group commformgroup btngroup">
                                 <button type="submit" class="btn btn-primary">Save</button>
                                 <a href="{{url('/')}}" class="commbtn" data-dismiss="modal">Cancel</a>
-                                <!--<button type="button" class="btn btn-secondary">Cancel</button>-->
                                 <button type="button" class="btn btn-primary pull-right" onclick="buildFormSkeloton()"> <i class="fa fa-plus" aria-hidden="true"></i> Add New Question</button>
                             </div>
                             <input type="hidden" name="id" id="id">
