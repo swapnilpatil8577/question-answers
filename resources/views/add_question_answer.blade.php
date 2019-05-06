@@ -21,6 +21,37 @@
             <div class="panel panel-default">
                 <h4>Add New Call</h4>
                 <div class="panel-heading">Add New Question: answerChoice</div>
+                @php
+                    if (!empty(Session::get('success')))
+                    {                            
+                        @endphp
+                        <div class="alert alert-success">
+                            <ul>
+                                <li>{!! Session::get('success') !!}</li>
+                            </ul>
+                        </div>
+                        @php
+                    }
+                    @endphp
+
+                    @if ($errors->any() || Session::has('error'))
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+
+                        @php
+                        if (Session::has('error'))
+                        { 
+                            @endphp
+                            <li>{{ Session::get('error') }}</li>
+                            @php
+                        }
+                        @endphp
+                        </ul>
+                    </div>
+                    @endif
                     <div class="panel-body">
                         <form class="formmain" action="{{url('/save_question_answer')}}" method="post" name="manage_que_ans" id="manage_que_ans" accept-charset="UTF-8" enctype="multipart/form-data">
                             @csrf
